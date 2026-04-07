@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Livre {
     String titre;
     int nombre_pages;
     Auteur auteur;
+    public ArrayList<Genre> genres_liste = new ArrayList<Genre>();
 
     public Livre(String titre, int nombre_pages,Auteur auteur){
         this.titre=titre;
@@ -14,7 +17,15 @@ public class Livre {
         System.out.println("Le titre de ce livre : "+titre);
         System.out.println("Le nombre de pages de ce livre : "+nombre_pages);
         System.out.println("L'auteur de ce livre : "+auteur.nom+" "+auteur.prenom);
+        System.out.print("Genres : ");
+        for (int i = 0; i < genres_liste.size(); i++) {
+            System.out.print(genres_liste.get(i).nom + " ");
+        }
 
+    }
+
+    public void ajouterGenre(Genre g) {
+        this.genres_liste.add(g);
     }
 
 
